@@ -1,0 +1,46 @@
+.tracking-card__activity {
+   position: relative;
+   padding-top: 2.2rem;
+   overflow: hidden;
+
+   &-image {
+      position: absolute;
+      top: -0.5rem;
+      right: var(--spacing-md-2);
+   }
+
+   &-wrapper {
+      display: grid;
+      gap: var(--spacing-xs);
+      position: inherit;
+      z-index: 2;
+      padding: var(--spacing-md-2);
+   }
+
+   &-title,
+   &-current {
+      color: var(--color-neutral);
+   }
+
+   &-title {
+      font-size: 1rem;
+      font-weight: 400;
+   }
+
+   &-current {
+      font-size: 1.6rem;
+      font-weight: 300;
+   }
+
+   &-previous {
+      color: var(--navy-200);
+      font-size: 0.8rem;
+   }
+
+   &-header,
+   &-hours {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+}

@@ -1,0 +1,50 @@
+.tracking-card {
+   &__user {
+      &-header {
+         display: flex;
+         align-items: center;
+         gap: var(--spacing-sm);
+         padding: var(--spacing-md-2);
+         background-color: var(--purple-600);
+      }
+
+      &-image {
+         width: 4rem;
+         border: 3px solid var(--color-neutral);
+         border-radius: 100%;
+      }
+
+      &-text {
+         color: var(--navy-200);
+         font-size: 0.7rem;
+         line-height: 1.5;
+      }
+
+      &-name {
+         color: var(--color-neutral);
+         font-weight: 300;
+      }
+   }
+
+   &__filter {
+      &-list {
+         padding-block: var(--spacing-md-2);
+         display: flex;
+         justify-content: space-evenly;
+      }
+
+      &-button {
+         background-color: transparent;
+         border: none;
+         color: var(--color-muted);
+         font-size: 1rem;
+         font-weight: 300;
+         cursor: pointer;
+      }
+
+      &-button.active {
+         color: var(--color-neutral);
+         font-weight: 400;
+      }
+   }
+}

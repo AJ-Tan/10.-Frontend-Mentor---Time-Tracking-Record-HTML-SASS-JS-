@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 1.125rem; //18rem
+}
+
+body {
+   align-content: center;
+   min-height: 90vh;
+   font-family: "Rubik", Arial, Helvetica;
+   background-color: var(--navy-950);
+}
+
+body.loading {
+   visibility: hidden;
+}
+
+button {
+   font-family: inherit;
+}
+
+img {
+   display: block;
+   max-width: 100%;
+}
+
+ul {
+   list-style-type: none;
+}
