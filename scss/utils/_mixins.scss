@@ -1,0 +1,10 @@
+$breakpointList: (
+   "tablet": 48em,
+   "desktop": 64em,
+);
+
+@mixin breakpoint($size) {
+   @media screen and (min-width: map-get($breakpointList, $size)) {
+      @content;
+   }
+}

@@ -1,2 +1,25 @@
 @forward "Tracking-Card";
 @forward "main";
+@forward "media";
+
+.bg-orange {
+   background: linear-gradient(0deg, transparent 50%, var(--orange) 50%);
+}
+.bg-blue {
+   background: linear-gradient(0deg, transparent 50%, var(--blue) 50%);
+}
+.bg-pink {
+   background: linear-gradient(0deg, transparent 50%, var(--pink) 50%);
+}
+.bg-green {
+   background: linear-gradient(0deg, transparent 50%, var(--green) 50%);
+}
+.bg-green .tracking-card__activity-image {
+   top: 0rem;
+}
+.bg-purple {
+   background: linear-gradient(0deg, transparent 50%, var(--purple-500) 50%);
+}
+.bg-yellow {
+   background: linear-gradient(0deg, transparent 50%, var(--yellow) 50%);
+}

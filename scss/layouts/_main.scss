@@ -1,6 +1,8 @@
 .tracking-card {
    display: grid;
    gap: var(--spacing-md-2);
-   margin: var(--spacing-xxl) auto;
-   max-width: 17rem;
+   margin-top: var(--spacing-xxl);
+   margin-inline: auto;
+   padding-inline: var(--spacing-md-1);
+   max-width: 21rem;
 }

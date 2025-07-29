@@ -1,0 +1,89 @@
+@use "../utils/" as *;
+
+@include breakpoint("tablet") {
+   .tracking-card__filter-item button {
+      font-size: 0.9rem;
+   }
+
+   .tracking-card__activity-previous {
+      font-size: 0.7rem;
+   }
+
+   .tracking-card {
+      grid-template-columns: 13rem repeat(2, 1fr);
+      grid-template-areas:
+         "card1 card2 card3"
+         "card1 card4 card5"
+         "card1 card6 card7";
+
+      margin-block: unset;
+      max-width: 48rem;
+
+      @for $i from 1 to 8 {
+         article:nth-child(#{$i}) {
+            grid-area: card#{$i};
+         }
+      }
+
+      &__user {
+         grid-template-rows: 2.2fr 1fr;
+
+         &-header {
+            flex-direction: column;
+            gap: var(--spacing-lg-1);
+            align-items: start;
+         }
+
+         &-info {
+            flex-grow: 1;
+         }
+
+         &-name {
+            flex-grow: 1;
+            font-size: 2rem;
+         }
+      }
+
+      &__filter {
+         &-list {
+            flex-direction: column;
+            padding-block: unset;
+            padding-inline: var(--spacing-md-2);
+         }
+      }
+   }
+
+   .attribution {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}
+
+@include breakpoint("desktop") {
+   .tracking-card {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas:
+         "card1 card2 card3 card4"
+         "card1 card5 card6 card7";
+
+      max-width: 56rem;
+
+      &__activity {
+         &-wrapper {
+            gap: var(--spacing-md-1);
+         }
+
+         &-hours {
+            flex-direction: column;
+            align-items: start;
+            gap: var(--spacing-sm);
+         }
+
+         &-current {
+            font-size: 2.5rem;
+         }
+      }
+   }
+}
