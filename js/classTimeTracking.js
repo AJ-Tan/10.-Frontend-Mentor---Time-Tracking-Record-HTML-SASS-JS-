@@ -2,6 +2,12 @@ import {CreateDOM} from "./classDOM.js";
 
 export class TimeTracking {
    #activityDOMList = new Map();
+   #previousHoursText = {
+      "daily": "Yesterday",
+      "weekly": "Last Week",
+      "monthly": "Last Month",
+   }
+   #jsonData = null;
 
    constructor(url) {
       this.url = url;
@@ -10,7 +16,9 @@ export class TimeTracking {
    async getJSON() {
       try {
          const fetchJson = await fetch(this.url);
-         return fetchJson.json();
+         const data = fetchJson.json();
+         this.#jsonData = data;
+         return data;
       } catch (err) {
          console.error('Error fetching JSON:', err);
       }
@@ -44,24 +52,33 @@ export class TimeTracking {
                                  .createChild("img","tracking-card__activity-menu", "", [["src", "./images/icon-ellipsis.svg"], ["alt", "Icon that represents ellipsis"]])
                               .setParent("tracking-card__activity-hours")
                                  .createChild("p","tracking-card__activity-current", `${timeframes[mode].current}hrs`)
-                                 .createChild("p","tracking-card__activity-previous", `Last Week - ${timeframes[mode].previous}hrs`)
+                                 .createChild("p","tracking-card__activity-previous", `${this.#previousHoursText[mode]} - ${timeframes[mode].previous}hrs`)
                            .appendToDocument(".tracking-card");
             this.#activityDOMList.set(title, activityArticle);
          }
+
+         //To sync html and js tag visual loading
+         document.body.classList.remove('loading');
       });
    }
 
    changeFilterAll(e) {
       const timeframeFilter = e.currentTarget.dataset["filter"];
+      const filterButtonList = document.querySelectorAll('.tracking-card__filter-button');
 
-      this.getJSON().then(res => {
+      for(const filterButton of filterButtonList) {
+         filterButton.classList.remove('active');
+      }
+
+      e.currentTarget.classList.add('active');
+      this.#jsonData.then(res => {
          const jsonMap = new Map(res.map(mapResult => [mapResult.title, mapResult.timeframes]));
          for (const [key, objDOM] of this.#activityDOMList) {
             const currentElement = objDOM.node.querySelector('.tracking-card__activity-current');
             const previousElement = objDOM.node.querySelector('.tracking-card__activity-previous');
 
             currentElement.textContent = `${jsonMap.get(key)[timeframeFilter].current}hrs`;
-            previousElement.textContent = `Last Week - ${jsonMap.get(key)[timeframeFilter].previous}hrs`;
+            previousElement.textContent = `${this.#previousHoursText[timeframeFilter]} - ${jsonMap.get(key)[timeframeFilter].previous}hrs`;
          }
       }) 
    }

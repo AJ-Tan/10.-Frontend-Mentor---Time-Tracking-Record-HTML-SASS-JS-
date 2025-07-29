@@ -11,6 +11,13 @@
          sizes="32x32"
          href="./images/favicon-32x32.png"
       />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+         rel="stylesheet"
+      />
+      <link rel="stylesheet" href="dist/style.css" />
 
       <title>Frontend Mentor | Time tracking dashboard</title>
 
@@ -27,7 +34,7 @@
 
       <script type="module" src="./js/index.js"></script>
    </head>
-   <body>
+   <body class="loading">
       <main>
          <section class="tracking-card">
             <article class="tracking-card__user">
@@ -37,8 +44,10 @@
                      alt="Image of Jeremy"
                      class="tracking-card__user-image"
                   />
-                  <p class="tracking-card__user-text">Record for</p>
-                  <h1 class="tracking-card__user-name">Jeremy Robson</h1>
+                  <div class="tracking-card__user-info">
+                     <p class="tracking-card__user-text">Record for</p>
+                     <h1 class="tracking-card__user-name">Jeremy Robson</h1>
+                  </div>
                </header>
                <ul class="tracking-card__filter-list">
                   <li class="tracking-card__filter-item">
@@ -53,7 +62,7 @@
                   <li class="tracking-card__filter-item">
                      <button
                         id="filter-weekly"
-                        class="tracking-card__filter-button"
+                        class="tracking-card__filter-button active"
                         data-filter="weekly"
                      >
                         Weekly

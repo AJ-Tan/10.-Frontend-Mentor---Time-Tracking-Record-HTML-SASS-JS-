@@ -3,7 +3,7 @@ import {Utils} from "./classUtils.js";
 
 const timeRecordData = new TimeTracking('../data.json');
 
-timeRecordData.createActivityCards("daily");
+timeRecordData.createActivityCards("weekly");
 
 new Utils()
     .eventListener('filter-daily', 'click', timeRecordData.changeFilterAll.bind(timeRecordData))

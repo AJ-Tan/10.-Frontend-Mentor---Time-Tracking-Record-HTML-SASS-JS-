@@ -2,6 +2,7 @@ export class CreateDOM {
    #newNode = null;
    #childNode = new Map();
    #parentClass = null;
+   
    constructor(nodeTag, nodeClass) {
       this.#newNode = document.createElement(nodeTag);
       this.#newNode.className = nodeClass;
