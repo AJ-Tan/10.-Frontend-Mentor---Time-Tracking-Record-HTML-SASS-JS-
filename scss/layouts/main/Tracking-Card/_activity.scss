@@ -19,6 +19,7 @@
       position: inherit;
       z-index: 2;
       padding: var(--spacing-md-2);
+      cursor: pointer;
    }
 
    &-title,
@@ -29,10 +30,6 @@
    &-title {
       font-size: 1rem;
       font-weight: 400;
-   }
-
-   &-menu {
-      cursor: pointer;
    }
 
    &-current {
