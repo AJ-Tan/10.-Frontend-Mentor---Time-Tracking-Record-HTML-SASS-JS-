@@ -133,8 +133,6 @@ export class TimeTracking {
 
 -  [Mutations](https://medium.com/@fknussel/arrays-objects-and-mutations-6b23348b54aa) - I used mutation to adjust the values for current and previous hours based on the timeframe filter.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
 ## Author
 
 -  GitHub - [AJ-Tan](https://github.com/AJ-Tan)
