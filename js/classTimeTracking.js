@@ -36,13 +36,13 @@ export class TimeTracking {
 
       this.getJSON().then(res => {
          for(const {title, timeframes} of res) {
-            const activityArticle = new CreateDOM('article', `tracking-card__activity ${activityProperties[title].bgColor}`);
+            const activityArticle = new CreateDOM('article', `tracking-card__activity ${activityProperties[title]?.bgColor}`);
 
             //setParent is declaring that createChild under it will be under the specified parent.
             //this is to avoid repetitive declaration of which parent the child is under.
             //also for structural declaration purposes.
             activityArticle.setParent('tracking-card__activity')
-                           .createChild("img","tracking-card__activity-image","",[["src", activityProperties[title].img], ["alt", `Icon that represents ${title} activity`]])
+                           .createChild("img","tracking-card__activity-image","",[["src", activityProperties[title]?.img], ["alt", `Icon that represents ${title} activity`]])
                            .createChild("div","tracking-card__activity-wrapper")
                            .setParent("tracking-card__activity-wrapper")
                               .createChild("header","tracking-card__activity-header")
