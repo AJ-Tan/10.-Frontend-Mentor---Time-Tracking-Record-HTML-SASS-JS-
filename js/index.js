@@ -1,7 +1,7 @@
 import {TimeTracking} from "./classTimeTracking.js";
 import {Utils} from "./classUtils.js";
 
-const timeRecordData = new TimeTracking('../data.json');
+const timeRecordData = new TimeTracking('./data.json');
 
 timeRecordData.createActivityCards("weekly");
 
