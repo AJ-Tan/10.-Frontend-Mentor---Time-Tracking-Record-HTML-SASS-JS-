@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
--  Solution URL: [Add solution URL here](https://your-solution-url.com)
--  Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-  Solution URL: [GitHub Repository](https://github.com/AJ-Tan/10.-Frontend-Mentor---Time-Tracking-Record-HTML-SASS-JS-)
+-  Live Site URL: [GitHub Pages](https://aj-tan.github.io/10.-Frontend-Mentor---Time-Tracking-Record-HTML-SASS-JS-/)
 
 ## My process
 
